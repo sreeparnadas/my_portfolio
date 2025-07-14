@@ -7,8 +7,8 @@ function Header(){
             <div className="container">
                 <div className=" d-flex flex-column align-items-center" 
                 style={{
-                        height: '35vh',
-                        background: 'linear-gradient(90deg, rgb(167 165 207) 0%, rgba(9, 9, 121, 1) 24%, rgba(0, 212, 255, 1) 100%)'
+                        height: '300px',
+                        background: 'linear-gradient(90deg, rgb(167, 165, 207) 0%, rgb(82 82 103) 24%, rgb(166 223 235) 100%)'
                     }}
                 >
                     <div>
