@@ -1,13 +1,13 @@
-import Header from './components/Header';
-import SkillSet from './components/SkillSet';
+import MasterComponent from './components/MasterComponent';
 
 
 
 function App(){
   return (
     <> 
-      <Header />
-      <SkillSet />
+      <div className='container-fluid'>
+        <MasterComponent/>
+      </div>
     </>
   )
 }
