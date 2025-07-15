@@ -1,4 +1,3 @@
-import backgroundImage from '../assets/images/background.jpg';
 import profilePhoto from '../assets/images/profile-photo.jpg';
 
 function Header(){
@@ -24,9 +23,7 @@ function Header(){
                     <div className='text-white pt-5'>
                         I build exceptional and accessible digital experiences for the web. Focused on creating elegant solutions to complex problems.
                     </div>
-                </div>
-
-                    
+                </div>              
             </div>
         
         </>

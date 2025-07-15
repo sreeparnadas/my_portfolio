@@ -1,9 +1,15 @@
 import Header from './components/Header';
+import SkillSet from './components/SkillSet';
 
 
 
 function App(){
-  return <div> <Header /></div>
+  return (
+    <> 
+      <Header />
+      <SkillSet />
+    </>
+  )
 }
 
 
