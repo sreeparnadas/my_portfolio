@@ -1,24 +1,32 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 
 const Contact = () => {
     const form = useRef();
+    const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState('');
     const sendEmail = (e) => {
-    e.preventDefault();
+        e.preventDefault();
+        setMessage('');
+        setMessageType('');
 
-    emailjs
-      .sendForm('service_43tc7h9', 'template_43mf7zt', form.current, {
-        publicKey: 'ZCiR3-5STB_hcTSvn',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
+        emailjs
+        .sendForm('service_43tc7h9', 'template_43mf7zt', form.current, {
+            publicKey: 'ZCiR3-5STB_hcTSvn',
+        })
+        .then(
+            () => {
+                console.log('SUCCESS!');
+                setMessage('your message sent successfully!');
+                setMessageType('success');
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
+                setMessage('Failed to send message. Please try again');
+                setMessageType('error');
+            },
+        );
     };
     return (
         <>
@@ -48,6 +56,7 @@ const Contact = () => {
                             </div>
                             <div className="d-flex justify-content-center">
                                 <button type="button" className="btn btn-success mt-3" name='send_mail' id='send-mail-btn' onClick={sendEmail}>Send</button>
+                                {message && (<p className={messageType==='success'?'text-success' : 'text-danger'}>{message}</p>)}
                             </div>
                         </form>
                     </div>
